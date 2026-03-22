@@ -568,6 +568,19 @@
       .score-ring { width: 96px; height: 96px; }
       .bar-row { grid-template-columns: 86px 1fr 38px; font-size: 0.84rem; }
       .cta-row { display: none; }
+      .cta-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-content > div:last-child {
+    width: 100%;
+  }
+
+  .cta-content .button {
+    white-space: normal;
+    word-break: break-word;
+  }
     }
   </style>
 </head>
