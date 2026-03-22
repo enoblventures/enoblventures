@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enobl Ventures | AI-Driven YC Investing</title>
+  <meta name="description" content="Enobl Ventures is a venture capital firm focused on identifying and investing in exceptional Y Combinator companies through a combination of proprietary AI and deep operator judgment." />
+  <meta name="theme-color" content="#F85C4D" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+ <title>Enobl Ventures | VC for YC Founders</title>
+<meta name="title" content="Enobl Ventures | VC for YC Founders" />
+<meta name="description" content="Enobl Ventures is a venture capital firm investing in Y Combinator companies. We move quickly, bring global operator and YC alumni experience, and combine AI with human judgment to make thoughtful investment decisions." />
+<meta name="keywords" content="Enobl Ventures, venture capital, VC, Y Combinator, YC founders, YC startups, startup funding, early stage investing, seed investing, AI venture capital" />
+<meta name="author" content="Enobl Ventures" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="theme-color" content="#F85C4D" />
+
+<link rel="canonical" href="https://www.enoblventures.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.enoblventures.com/" />
+<meta property="og:title" content="Enobl Ventures | VC for YC Founders" />
+<meta property="og:description" content="We invest in Y Combinator companies with speed, conviction, and a blend of AI/ML-driven analysis and human judgment." />
+<meta property="og:site_name" content="Enobl Ventures" />
+<meta property="og:image" content="https://www.enoblventures.com/og-image.jpg" />
+<meta property="og:image:alt" content="Enobl Ventures website preview" />
+<meta property="og:locale" content="en_US" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://www.enoblventures.com/" />
+<meta name="twitter:title" content="Enobl Ventures | VC for YC Founders" />
+<meta name="twitter:description" content="We invest in Y Combinator companies with speed, conviction, and a blend of AI/ML-driven analysis and human judgment." />
+<meta name="twitter:image" content="https://www.enoblventures.com/og-image.jpg" />
+<meta name="twitter:image:alt" content="Enobl Ventures website preview" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Enobl Ventures",
+  "url": "https://www.enoblventures.com/",
+  "logo": "https://www.enoblventures.com/logo.png",
+  "description": "Enobl Ventures is a venture capital firm investing in Y Combinator companies. The firm combines AI and machine learning with human judgment to make thoughtful investment decisions.",
+  "sameAs": []
+}
+</script>
+ 
+ <style>
+    :root {
+      --accent: #F85C4D;
+      --white: #FFFFFF;
+      --black: #000000;
+      --navy: #2B3950;
+      --bg: #07111D;
+      --panel: rgba(255,255,255,0.06);
+      --panel-strong: rgba(255,255,255,0.1);
+      --border: rgba(255,255,255,0.14);
+      --text: rgba(255,255,255,0.94);
+      --muted: rgba(255,255,255,0.72);
+      --shadow: 0 30px 80px rgba(0,0,0,0.35);
+      --radius: 24px;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(248,92,77,0.18), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(43,57,80,0.65), transparent 32%),
+        linear-gradient(180deg, #0a1422 0%, #08111c 40%, #050a12 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(6, 12, 20, 0.66);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      font-size: 1.1rem;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .brand-logo svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .button,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 7px 22px;
+      font-weight: 500;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .button {
+      background: linear-gradient(135deg, var(--accent), #ff7a62);
+      color: var(--white);
+      box-shadow: 0 14px 30px rgba(248,92,77,0.26);
+    }
+
+    .button:hover,
+    .button-secondary:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(135deg, var(--accent), #FCBD9A);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--white);
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: stretch;
+      max-width: 1020px;
+      padding-left:10px;
+      padding-right:10px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      font-size: 0.9rem;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 8px rgba(248,92,77,0.15);
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+       font-weight:300;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 1020px;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      color: var(--muted);
+      font-weight:300;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+      font-weight:300;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--white);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      display: none;
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    .section-head {
+      max-width: 1020px;
+      margin-bottom: 26px;
+    }
+
+    .section-head span {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(248,92,77,0.14);
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .process-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .process-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .process-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: linear-gradient(135deg, rgba(248,92,77,0.22), rgba(248,92,77,0.1));
+      color: var(--white);
+    }
+
+    .process-item h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+    }
+
+    .process-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .panel {
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .panel h3 {
+      margin: 0 0 18px;
+      font-size: 1.3rem;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .check-row {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 12px;
+      align-items: start;
+      color: var(--muted);
+    }
+
+    .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(248,92,77,0.18);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-size: 0.78rem;
+      font-weight: 900;
+      margin-top: 2px;
+    }
+
+    .thesis {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .quote {
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(248,92,77,0.16), rgba(43,57,80,0.22));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .quote p {
+      margin: 0;
+      font-size: 1.12rem;
+      color: var(--white);
+    }
+
+    .quote small {
+      display: block;
+      margin-top: 14px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .cta {
+      padding-bottom: 72px;
+    }
+
+    .cta-box {
+      overflow: hidden;
+      position: relative;
+      padding: 34px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(135deg, rgba(43,57,80,0.98), rgba(12,20,31,0.95));
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      inset: auto -5% -30% auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(248,92,77,0.24), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .cta-content h2 {
+      margin-bottom: 8px;
+    }
+
+    .cta-content p {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 0 10px 32px;
+      color: rgba(255,255,255,0.58);
+      font-size: 0.62rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 18px;
+    }
+
+    .mobile-menu-button {
+      display: none;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: var(--white);
+      border-radius: 12px;
+      width: 46px;
+      height: 46px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .thesis,
+      .cta-content,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-content {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 16px;
+        right: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 18px;
+        border-radius: 18px;
+        background: rgba(7, 13, 22, 0.98);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.active { display: flex; }
+      .mobile-menu-button { display: inline-grid; place-items: center; }
+      .cta-row .button-secondary { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(calc(100% - 20px), var(--max)); }
+      .hero { padding-top: 42px; }
+      .hero-card,
+      .card,
+      .panel,
+      .cta-box,
+      .quote,
+      .process-item { padding: 20px; }
+      .score-top { flex-direction: column; align-items: flex-start; }
+      .score-ring { width: 96px; height: 96px; }
+      .bar-row { grid-template-columns: 86px 1fr 38px; font-size: 0.84rem; }
+      .cta-row { display: none; }
+      .cta-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-content > div:last-child {
+    width: 100%;
+  }
+
+  .cta-content .button {
+    white-space: normal;
+    word-break: break-word;
+  }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="Enobl Ventures home">
+        <span class="brand-logo" aria-hidden="true">
+          <svg width="160" height="124" viewBox="0 0 160 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d_814_143)">
+              <path d="M151.47 103.94C153.031 103.951 154.276 103.462 155.073 102.119C155.903 100.72 155.641 99.365 154.833 98.0215C151.306 92.1475 147.8 86.2735 144.306 80.3884C139.403 72.1382 134.5 63.8768 129.597 55.6266C125.512 48.7533 121.439 41.8688 117.344 34.9843C115.935 32.6081 114.003 32.6081 112.539 34.9843C108.51 41.5023 70.7363 103.94 70.7363 103.94C70.7363 103.94 147.233 103.907 151.47 103.94Z" fill="#F85C4D"/>
+              <path d="M31.4623 115.458C24.5437 115.458 17.6251 115.414 10.7064 115.479C8.16267 115.501 6.13423 114.707 4.82945 112.499C3.48081 110.215 3.89747 108.007 5.21321 105.81C10.9586 96.228 16.6821 86.6241 22.3946 77.0202C30.4097 63.5552 38.4029 50.0683 46.396 36.5924C53.0624 25.3679 59.7179 14.1326 66.3843 2.90809C68.6869 -0.9748 71.8337 -0.963923 74.224 2.90809C80.8027 13.5561 87.3814 24.2042 93.9492 34.8631C95.6706 37.6583 97.403 40.4427 99.0038 43.3032C99.3328 43.8906 99.3876 44.9673 99.0587 45.5111C90.0129 60.4988 80.9014 75.454 71.7789 90.4091C67.3821 97.6202 62.9524 104.81 58.5776 112.031C57.1522 114.381 55.1786 115.512 52.3826 115.49C45.4201 115.414 38.4357 115.458 31.4623 115.458Z" fill="#F85C4D"/>
+            </g>
+            <defs>
+              <filter id="filter0_d_814_143" x="0" y="0" width="159.582" height="123.49" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="4"/>
+                <feGaussianBlur stdDeviation="2"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_814_143"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_814_143" result="shape"/>
+              </filter>
+            </defs>
+          </svg>
+        </span>
+        <span>Enobl Ventures</span>
+      </a>
+
+     
+
+      <div class="cta-row">
+        <a class="button" href="mailto:hello@enoblventures.com">Contact</a>
+      </div>
+
+      <button class="mobile-menu-button" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+             We are YC founders investing in YC founders
+          </div>
+
+          <h1>Investing in YC founders building something people want.</h1>
+          <p>
+            We use proprietary machine-learning models developed over 10+ years, together with our global operating expertise, to evaluate and screen potential investments. This allows us to invest with high conviction in companies we believe are positioned to outperform.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="mailto:hello@enoblventures.com">Get in touch</a>
+          </div>
+
+          <div class="hero-stats" id="values">
+            <div class="stat">
+              <strong>Founder respect</strong>
+              <span>As YC founders, we will be the type of investor we'd want to work with. We aim to be clear, direct, accountable to our values and commitments.</span>
+            </div>
+            <div class="stat">
+              <strong>Long-term thinking & humanity</strong>
+              <span>We care about going the distance. We're here as partners on everything from product and engineering to just being a sounding board when things get tough. </span>
+            </div>
+            <div class="stat">
+              <strong>Follow-ons & Playbooks</strong>
+              <span> We care about backing exceptional founders, acting with transparency, and supplying them with resources to help them operate and succeed. </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+        <div class="container hero-grid">
+      <div class="container">
+        <div class="section-head">
+          <span>Approach</span>
+          <h2>Focused, selective, and founder-friendly.</h2>
+          <p>
+            Our job is simple: identify companies we deeply believe in, move with clarity, and show up well after we invest.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-icon">01</div>
+            <h3>Proprietary machine learning analysis</h3>
+            <p>We analyze companies and founders in each batch using our proprietary AI/ML models and operating expereince. </p>
+          </div>
+          <div class="card">
+            <div class="card-icon">02</div>
+            <h3>Quick decision making</h3>
+            <p>When we have conviction, we move fast and communicate clearly and respect how much speed matters during a raise.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">03</div>
+            <h3>Global operators & YC alumni</h3>
+            <p>We bring an operator mindset, international perspectives and networks, and firsthand YC experience to how we support founders.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <div class="cta-content">
+            <div>
+              <h2>If you're building something people want, we'd love to hear from you.</h2>
+              <p>
+                Reach out anytime.
+              </p>
+            </div>
+            <div>
+              <a class="button" href="mailto:hello@enoblventures.com">hello@enoblventures.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Enobl Ventures. All rights reserved.</div>
+    
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const year = document.getElementById('year');
+
+    year.textContent = new Date().getFullYear();
+
+    menuToggle.addEventListener('click', () => {
+      const isActive = mobileNav.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', String(isActive));
+      menuToggle.textContent = isActive ? '✕' : '☰';
+    });
+
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+  </script>
+</body>
+</html>
