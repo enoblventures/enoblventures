@@ -1,0 +1,8 @@
+.DS_Store
+Context/
+content/
+research/
+reports/
+PROMETHEUS.md
+.codex/
+.agents/
