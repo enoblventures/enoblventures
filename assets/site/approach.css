@@ -74,3 +74,12 @@ html{scroll-behavior:smooth}body{margin:0;background:#121c20}a:focus-visible,but
 #enobl-home .model-technical-detail{margin-top:32px}#enobl-home .model-technical-detail h3{font-size:24px;font-weight:400;line-height:1.3;margin:28px 0 0}#enobl-home .model-technical-detail strong{color:#F3F2EC;font-weight:500}#enobl-home .model-technical-detail[open] summary span{transform:rotate(45deg)}
 
 #enobl-home .founder-support{background:#17262b;border-top:3px solid var(--orange)}
+
+/* Founder investment fit, before the detailed approach. */
+#enobl-home .mandate-section{background:#17262b}
+#enobl-home .mandate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin:40px 0 0}
+#enobl-home .mandate-grid>div{border-top:2px solid var(--orange);padding-top:20px}
+#enobl-home .mandate-grid dt{font-family:Manrope,sans-serif;font-size:23px;line-height:1.3;color:#f3f2ec;margin-bottom:14px}
+#enobl-home .mandate-grid dd{font-size:16px;line-height:1.7;color:#c1cbc8;margin:0}
+#enobl-home .mandate-grid strong{color:#f3f2ec;font-weight:500}
+@container(max-width:600px){#enobl-home .mandate-grid{grid-template-columns:1fr;gap:25px;margin-top:30px}}
