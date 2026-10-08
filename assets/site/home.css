@@ -62,3 +62,8 @@ html{scroll-behavior:smooth}body{margin:0;background:#121c20}a:focus-visible,but
 .skip-link{position:absolute;left:16px;top:-80px;z-index:10;background:#F3F2EC;color:#121C20;padding:12px}.skip-link:focus{top:12px}#enobl-home .section-link{margin-top:28px}#enobl-home .method-hero{padding-bottom:48px}#enobl-home .method-hero h1{font-size:clamp(38px,6.4cqw,76px)}@media(max-width:520px){#enobl-home .site nav{flex-wrap:wrap}#enobl-home .section-lead{grid-template-columns:1fr;gap:24px}}
 
 #enobl-home .founder-section{background:#17262b}#enobl-home .section-lead .founder-followup{margin-top:22px}
+
+/* Collective team experience; individual profiles remain private. */
+#enobl-home .people-global{margin-top:55px;padding-top:35px;border-top:1px solid #334044}
+#enobl-home .people-locations{color:var(--orange);font-size:11px;letter-spacing:1.8px;line-height:1.8;margin:0 0 25px}
+#enobl-home .people-global h3{font-family:Manrope,sans-serif;font-size:clamp(28px,3.5cqw,40px);line-height:1.2;font-weight:400;letter-spacing:-1px;margin:0}
