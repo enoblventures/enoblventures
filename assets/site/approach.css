@@ -60,3 +60,6 @@
 
 html{scroll-behavior:smooth}body{margin:0;background:#121c20}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #F85C4D;outline-offset:5px}#enobl-home .site{overflow:clip}#enobl-home .preview-note{display:none}#enobl-home nav a{padding:10px 0}#enobl-home .textlink{min-height:44px}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @container(max-width:520px){#enobl-home .site header{flex-wrap:wrap;gap:10px}#enobl-home .site nav{width:100%;justify-content:space-between;gap:12px}#enobl-home .site nav a:not(:last-child){display:block}}
+
+/* Concise public site and shared navigation */
+.skip-link{position:absolute;left:16px;top:-80px;z-index:10;background:#F3F2EC;color:#121C20;padding:12px}.skip-link:focus{top:12px}#enobl-home .section-link{margin-top:28px}#enobl-home .method-hero{padding-bottom:48px}#enobl-home .method-hero h1{font-size:clamp(38px,6.4cqw,76px)}@media(max-width:520px){#enobl-home .site nav{flex-wrap:wrap}#enobl-home .section-lead{grid-template-columns:1fr;gap:24px}}
