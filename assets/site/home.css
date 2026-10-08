@@ -60,3 +60,5 @@ html{scroll-behavior:smooth}body{margin:0;background:#121c20}a:focus-visible,but
 
 /* Concise public site and shared navigation */
 .skip-link{position:absolute;left:16px;top:-80px;z-index:10;background:#F3F2EC;color:#121C20;padding:12px}.skip-link:focus{top:12px}#enobl-home .section-link{margin-top:28px}#enobl-home .method-hero{padding-bottom:48px}#enobl-home .method-hero h1{font-size:clamp(38px,6.4cqw,76px)}@media(max-width:520px){#enobl-home .site nav{flex-wrap:wrap}#enobl-home .section-lead{grid-template-columns:1fr;gap:24px}}
+
+#enobl-home .founder-section{background:#17262b}#enobl-home .section-lead .founder-followup{margin-top:22px}
